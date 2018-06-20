@@ -10,8 +10,8 @@ public class Basket {
     /**
      * List ItemBasket and int Status
      */
-    private List ItemBasket;
-    private int Status;
+    List ItemBasket;
+    int Status;
 
     /**
      * BasketItemBasket and Basketstatus
