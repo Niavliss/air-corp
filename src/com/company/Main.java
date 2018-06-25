@@ -44,7 +44,6 @@ public class Main {
                     updateProfil(user);
                     break;
 
-                // déconexion
                 case 3:
                     displayListproduct(articles);
                     break;
@@ -59,11 +58,9 @@ public class Main {
         }
         while (reponse != 5);
 
-
-
-
-
     }
+
+
 
     public static void displayProfil(User userconnected) {
 
@@ -99,5 +96,4 @@ public class Main {
         System.out.println(listarticle[idProduct - 1].toString());
 
     }
-
 }

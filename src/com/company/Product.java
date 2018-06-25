@@ -35,37 +35,13 @@ public class Product {
     public String toString() {
         return name+" "+stock+" "+price;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public void setStock(double stock) {
-        this.stock = stock;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public double getStock() {
-        return stock;
-    }
+    public void setId(int id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setPrice(float price) { this.price = price; }
+    public void setStock(double stock) { this.stock = stock; }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public float getPrice() { return price; }
+    public double getStock() { return stock; }
 
 }

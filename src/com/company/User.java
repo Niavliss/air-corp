@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
 
 /**
  * abstract class User with login and password attributs
@@ -38,4 +37,5 @@ class User {
     public String getPassword() {
         return password;
     }
+
 }
