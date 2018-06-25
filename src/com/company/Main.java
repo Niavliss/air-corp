@@ -42,7 +42,6 @@ public class Main {
         int reponse = sc.nextInt();
         user.exec(reponse);
 
-
     }
 
 }

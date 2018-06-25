@@ -113,14 +113,14 @@ public class Commercial extends User {
         System.out.println(this.productList);
     }
 
-    public void deleteProduct(Product[] listarticle) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Veuillez saisir un article à supprimer");
-        int idProduct = sc.nextInt();
-        System.out.println(listarticle[idProduct - 1].toString());
-
-        listarticle[idProduct-1] = new Product(idProduct, "");
-        System.out.println(listarticle[idProduct - 1].toString());
-    }
+//    public void deleteProduct(Product[] listarticle) {
+//
+//       Scanner sc = new Scanner(System.in);
+//        System.out.println("Veuillez saisir un article à supprimer");
+//        int idProduct = sc.nextInt();
+//        System.out.println(listarticle[idProduct - 1].toString());
+//
+//        listarticle[idProduct-1] = new Product(idProduct, "");
+//        System.out.println(listarticle[idProduct - 1].toString());
+//    }
 }

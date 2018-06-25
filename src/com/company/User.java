@@ -49,19 +49,24 @@ class User {
         System.out.println("Veuillez faire un choix");
         System.out.println("Choisir 1 pour afficher votre profil");
         System.out.println("Choisir 2 pour modifier le mot de passe");
-        System.out.println("Choisir 99 pour sortir ");
+        System.out.println("Choisir 9 pour sortir ");
     }
 
     public void exec(int reponse) {
-        switch (reponse) {
+        Scanner sc = new Scanner(System.in);
+        do {
 
-            case 1:
-                this.displayProfil();
-                break;
-            case 2:
-                this.updateProfil();
-                break;
-        }
+            switch (reponse) {
+
+                case 1:
+                    this.displayProfil();
+                    break;
+                case 2:
+                    this.updateProfil();
+                    break;
+            }
+            reponse = sc.nextInt();
+        } while (reponse != 9) ;
     }
 
     public void displayProfil() {
