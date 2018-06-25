@@ -8,10 +8,10 @@ public class Product {
     /**
      *   int id,  double Stock, float Price, String Name
      */
-    int id;
-    double stock;
-    float price;
-    String name;
+    private int id;
+    private double stock;
+    private float price;
+    private String name;
 
     /**
      * Product constructor int idProduct, double stockProduct, float priceProduct, string nameProduct
@@ -30,6 +30,8 @@ public class Product {
         this.name=nameProduct;
         this.id=idProduct;
     }
+
+
 
     @Override
     public String toString() {
