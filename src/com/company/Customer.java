@@ -3,10 +3,10 @@ package com.company;
 import java.util.Scanner;
 
 /**
- *  class Customer with budjet and baskets attributs
+ * class Customer with budjet and baskets attributs
  */
 
-public class Customer extends User{
+public class Customer extends User {
 
     /**
      * double budjet and Basket [] baskets
@@ -16,20 +16,16 @@ public class Customer extends User{
     private ProductList productList;
 
     /**
-     *
-     * @param budjetCustomer
+     * @param budjetCustomer it is the budjet of customer
      */
-    public Customer (String login, String password, double budjetCustomer) {
+
+    public Customer(String login, String password, double budjetCustomer) {
 
         super(login, password);
         budjet = budjetCustomer;
-        // baskets = basketCustomer;
+        // TODO baskets = basketCustomer;
         productList = new ProductList();
     }
-
-    public void setBudjet(double budjet) { this.budjet = budjet; }
-
-    public double getBudjet() { return budjet; }
 
 
     public void displayMenu() {
@@ -43,7 +39,8 @@ public class Customer extends User{
         switch (reponse) {
 
             case 3:
-               //TODO this.displayProduct();
+                displayProduct();
+
                 break;
             case 4:
                 // TODO this.addProductbasket();
@@ -54,6 +51,18 @@ public class Customer extends User{
         }
     }
 
+    public void displayProduct() {
 
+        System.out.println(this.productList);
+
+    }
+
+    public void setBudjet(double budjet) {
+        this.budjet = budjet;
+    }
+
+    public double getBudjet() {
+        return budjet;
+    }
 
 }

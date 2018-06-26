@@ -19,7 +19,10 @@ public class Main {
             System.out.println("Veuillez saisir votre mot de passe ");
             String password = sc.nextLine();
 
-            user = new User(login, password);
+            System.out.println("Quel budjet avez-vous ? ");
+            double budjet = sc.nextDouble();
+
+            user = new Customer(login, password, budjet);
 
         } else if (type.equals("c")) {
             System.out.println("Veuillez saisir votre login de commercial");

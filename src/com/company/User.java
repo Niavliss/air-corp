@@ -21,11 +21,12 @@ class User {
 
         this.login = userlogin;
         this.password = userpassword;
+
     }
+
     public User() {
         this.login = "";
         this.password = "";
-
 
     }
 

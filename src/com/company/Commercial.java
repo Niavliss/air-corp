@@ -15,16 +15,6 @@ public class Commercial extends User {
 
     }
 
-
-
-    public void setModerator(int moderator) {
-        this.moderator = moderator;
-    }
-
-    public int getModerator() {
-        return moderator;
-    }
-
     public void displayMenu() {
         super.displayMenu();
         System.out.println("Choisir 3 pour afficher un articles");
@@ -59,12 +49,12 @@ public class Commercial extends User {
         }
 
 
-
     }
 
-    public void displayProduct() {
-        System.out.println(this.productList);
 
+    public void displayProduct() {
+
+        System.out.println(this.productList);
 
     }
 
@@ -78,7 +68,6 @@ public class Commercial extends User {
 
         productList.deleteProduct(reponse);
         System.out.println(this.productList);
-
 
     }
 
@@ -111,6 +100,16 @@ public class Commercial extends User {
         productList.updateProduct(idProduct, newProduct);
 
         System.out.println(this.productList);
+    }
+
+    public void setModerator(int moderator) {
+
+        this.moderator = moderator;
+    }
+
+    public int getModerator() {
+
+        return moderator;
     }
 
 //    public void deleteProduct(Product[] listarticle) {
