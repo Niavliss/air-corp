@@ -3,13 +3,13 @@ package com.company;
 import java.security.PrivateKey;
 import java.util.HashMap;
 
-public class ProductList {
+public class Catalog {
 
 
     private HashMap<Integer, Product> listProduct;
 
 
-    public ProductList() {
+    public Catalog() {
 
         listProduct = new HashMap<>();
 

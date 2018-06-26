@@ -2,25 +2,24 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Commercial extends User {
+public class Commercial extends Admin {
 
-    private int moderator;
-    private ProductList productList;
+    private Catalog catalog;
 
-    public Commercial(String login, String password, int commercialmoderator) {
+    public Commercial(String login, String password) {
 
         super(login, password);
-        moderator = commercialmoderator;
-        productList = new ProductList();
+        catalog = new Catalog();
 
     }
 
     public void displayMenu() {
         super.displayMenu();
-        System.out.println("Choisir 3 pour afficher un articles");
-        System.out.println("Choisir 4 pour supprimer un articles");
-        System.out.println("Choisir 5 pour ajouter un articles");
-        System.out.println("Choisir 6 pour modifier un articles");
+        System.out.println("Choisir 3 pour afficher un article");
+        System.out.println("Choisir 4 pour supprimer un article");
+        System.out.println("Choisir 5 pour ajouter un article");
+        System.out.println("Choisir 6 pour modifier un article");
+        System.out.println("Choisir 9 pour sortir ");
     }
 
     public void exec(int reponse) {
@@ -54,20 +53,20 @@ public class Commercial extends User {
 
     public void displayProduct() {
 
-        System.out.println(this.productList);
+        System.out.println(this.catalog);
 
     }
 
     public void deleteProduct() {
 
-        System.out.println(this.productList);
+        System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir un article à supprimer ");
         int reponse = sc.nextInt();
 
 
-        productList.deleteProduct(reponse);
-        System.out.println(this.productList);
+        catalog.deleteProduct(reponse);
+        System.out.println(this.catalog);
 
     }
 
@@ -75,19 +74,20 @@ public class Commercial extends User {
 
        Scanner sc = new Scanner(System.in);
        System.out.println("Veuillez saisir l'id de l'article à ajouter");
+       // TODO ProductId idProduct = new ProductId(sc.nextInt());
        int idProduct = sc.nextInt();
 
        System.out.println("Veuillez saisir le nom de l'article à ajouter");
        String newProduct = sc.next();
 
-       productList.addProduct(idProduct, newProduct);
-       System.out.println(this.productList);
+       catalog.addProduct(idProduct, newProduct);
+       System.out.println(this.catalog);
    }
 
 
     public void updateProduct() {
 
-        System.out.println(this.productList);
+        System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir un article");
         int idProduct = sc.nextInt();
@@ -97,22 +97,20 @@ public class Commercial extends User {
 
         String newProduct = sc1.nextLine();
 
-        productList.updateProduct(idProduct, newProduct);
+        catalog.updateProduct(idProduct, newProduct);
 
-        System.out.println(this.productList);
+        System.out.println(this.catalog);
     }
 
-    public void setModerator(int moderator) {
-
-        this.moderator = moderator;
+    public void setCatalog(Catalog catalog) {
+        this.catalog = catalog;
     }
 
-    public int getModerator() {
-
-        return moderator;
+    public Catalog getCatalog() {
+        return catalog;
     }
 
-//    public void deleteProduct(Product[] listarticle) {
+    //    public void deleteProduct(Product[] listarticle) {
 //
 //       Scanner sc = new Scanner(System.in);
 //        System.out.println("Veuillez saisir un article à supprimer");

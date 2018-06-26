@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
-
 /**
  * class Customer with budjet and baskets attributs
  */
@@ -13,7 +11,7 @@ public class Customer extends User {
      */
     private double budjet;
     // private Basket [] baskets;
-    private ProductList productList;
+    private Catalog catalog;
 
     /**
      * @param budjetCustomer it is the budjet of customer
@@ -24,7 +22,7 @@ public class Customer extends User {
         super(login, password);
         budjet = budjetCustomer;
         // TODO baskets = basketCustomer;
-        productList = new ProductList();
+        catalog = new Catalog();
     }
 
 
@@ -33,6 +31,7 @@ public class Customer extends User {
         System.out.println("Choisir 3 pour afficher les produits");
         System.out.println("Choisir 4 pour ajouter un produit au panier");
         System.out.println("Choisir 5 pour afficher le panier");
+        System.out.println("Choisir 9 pour sortir ");
     }
 
     public void exec(int reponse) {
@@ -53,7 +52,7 @@ public class Customer extends User {
 
     public void displayProduct() {
 
-        System.out.println(this.productList);
+        System.out.println(this.catalog);
 
     }
 
