@@ -27,6 +27,11 @@ public class Customer extends User {
         basket = new Basket();
     }
 
+    public Customer () {
+
+        this.login = "";
+        this.password = "";
+    }
 
     public void displayMenu() {
         super.displayMenu();
@@ -81,10 +86,12 @@ public class Customer extends User {
     }
 
     public void setBudjet(double budjet) {
+
         this.budjet = budjet;
     }
 
     public double getBudjet() {
+
         return budjet;
     }
 

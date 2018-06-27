@@ -39,6 +39,7 @@ public class Catalog {
         String result = "";
 
         for (Integer id : listProduct.keySet()) {
+
             Product p = listProduct.get(id);
             result += p.toString() + "\n";
 
