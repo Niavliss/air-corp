@@ -62,10 +62,12 @@ public class Customer extends User {
     }
 
     public void setBudjet(double budjet) {
+
         this.budjet = budjet;
     }
 
     public double getBudjet() {
+
         return budjet;
     }
 

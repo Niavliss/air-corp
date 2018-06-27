@@ -50,7 +50,7 @@ class Admin extends User {
 
         if (moderator.equals("niveau 1")) {
 
-            System.out.println("Choisir 3 pour afficher un article");
+            System.out.println("Choisir 3 pour afficher la liste des articles");
             System.out.println("Choisir 4 pour supprimer un article");
             System.out.println("Choisir 5 pour ajouter un article");
             System.out.println("Choisir 6 pour modifier un article");
@@ -72,7 +72,10 @@ class Admin extends User {
     }
 
     public void exec(int reponse) {
-        switch (reponse) {
+        Scanner sc = new Scanner(System.in);
+        do {
+
+            switch (reponse) {
 
                 case 3:
                     if (moderator.equals("niveau 1")) {
@@ -107,10 +110,11 @@ class Admin extends User {
                     } else {
                     }
                     break;
-
-        }
-
+            }
+            reponse = sc.nextInt();
+        } while (reponse != 9) ;
     }
+
 
 
     // Methods related to commercial type 1
