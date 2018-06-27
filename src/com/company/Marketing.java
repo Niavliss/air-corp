@@ -29,7 +29,7 @@ public class Marketing extends User {
 
             case 4:
 
-                // TODO updatePrice();
+                updatePrice();
                 break;
 
 
@@ -40,6 +40,28 @@ public class Marketing extends User {
     public void displayProduct() {
 
         System.out.println(this.catalog);
+
+    }
+
+    public void updatePrice(){
+        System.out.println(this.catalog);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez choisir un article pour la modification du prix");
+        int choiceProduct = sc.nextInt();
+
+        String newProduct = sc.nextLine();
+
+        System.out.println("Veuillez modifier le prix de l'article");
+
+        Float newPrice = sc.nextFloat();
+
+        catalog.updateProduct(choiceProduct, newProduct, newPrice);
+
+        System.out.println(this.catalog);
+
+
+
+
 
     }
 

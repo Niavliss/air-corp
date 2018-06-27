@@ -23,10 +23,10 @@ public class Product {
         this.price=priceProduct;
         this.name=nameProduct;
     }
-    public Product(int idProduct, String nameProduct) {
+    public Product(int idProduct, String nameProduct, float priceProduct) {
 
         this.stock = 0;
-        this.price= 20;
+        this.price = priceProduct;
         this.name=nameProduct;
         this.id=idProduct;
     }

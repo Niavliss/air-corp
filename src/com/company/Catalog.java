@@ -52,13 +52,13 @@ public class Catalog {
 
     }
 
-    public void addProduct(int idProduct, String nameProduct ){
-        Product newProduct = new Product(idProduct, nameProduct);
+    public void addProduct(int idProduct, String nameProduct, float priceProduct ){
+        Product newProduct = new Product(idProduct, nameProduct, priceProduct);
         this.listProduct.put(idProduct, newProduct);
     }
 
-    public void updateProduct(int idProduct, String nameProduct ){
-        Product newProduct = new Product(idProduct, nameProduct);
+    public void updateProduct(int idProduct, String nameProduct, float priceProduct  ){
+        Product newProduct = new Product(idProduct, nameProduct, priceProduct);
         this.listProduct.replace(idProduct, newProduct);
     }
 }
