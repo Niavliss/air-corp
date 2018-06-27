@@ -36,8 +36,9 @@ public class UserList {
         String result = "";
 
         for (String login : listUser.keySet()) {
-            Customer p = listUser.get(login);
-            result += p.toString() + "\n";
+
+            Customer u = listUser.get(login);
+            result += u.toString() + "\n";
 
         }
         return result;

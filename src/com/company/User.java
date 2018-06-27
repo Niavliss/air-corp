@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * abstract class User with login and password attributs
  */
-class User {
+abstract class User {
 
     /**
      * String login and String password
