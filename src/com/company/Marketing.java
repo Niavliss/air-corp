@@ -1,6 +1,10 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Marketing extends User {
+
+    private Catalog catalog;
 
     public Marketing(String login, String password) {
 
@@ -19,7 +23,7 @@ public class Marketing extends User {
         switch (reponse) {
 
             case 3:
-                // TODO displayProduct();
+                displayProduct();
 
                 break;
 
@@ -33,5 +37,10 @@ public class Marketing extends User {
 
     }
 
+    public void displayProduct() {
+
+        System.out.println(this.catalog);
+
+    }
 
 }

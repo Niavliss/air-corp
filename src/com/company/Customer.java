@@ -25,6 +25,11 @@ public class Customer extends User {
         catalog = new Catalog();
     }
 
+    public Customer () {
+
+        this.login = "";
+        this.password = "";
+    }
 
     public void displayMenu() {
         super.displayMenu();

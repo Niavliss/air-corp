@@ -32,17 +32,17 @@ public class Main {
             System.out.println("Veuillez saisir votre mot de passe commercial");
             String password = sc.nextLine();
 
-            System.out.println("Type 1 ou 2");
-            int moderator = sc.nextInt();
+            System.out.println("Commercial de niveau 1 ou Commercial de niveau 2 ?");
+            String moderator = sc.nextLine();
 
-            if (moderator == 1) {
-                user = new Commercial(login, password);
+            if (moderator.equals("niveau 1")) {
+                user = new Admin(login, password, moderator);
             }
-            else if (moderator == 2) {
-                user = new Commercial2(login, password);
+            else if (moderator.equals("niveau 2")) {
+                user = new Admin(login, password, moderator);
             }
             else {
-                user = new User(); {
+                user = new Admin(); {
                 }
             }
         }

@@ -16,7 +16,7 @@ public class UserList {
         Customer paula = new Customer("Paula Miguel", "paupau", 5000);
         Customer ryu = new Customer("Ryu", "riri", 325);
 
-        this.listUser.put(michou.getLogin(),michou);
+        this.listUser.put(michou.getLogin(), michou);
         this.listUser.put(mikeline.getLogin(), mikeline);
         this.listUser.put(roberte.getLogin(), roberte);
         this.listUser.put(paula.getLogin(), paula);
