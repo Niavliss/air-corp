@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Scanner;
 
 /**
  * class Customer with budjet and baskets attributs
@@ -10,7 +11,7 @@ public class Customer extends User {
      * double budjet and Basket [] baskets
      */
     private double budjet;
-    // private Basket [] baskets;
+    private Basket basket;
     private Catalog catalog;
 
     /**
@@ -23,6 +24,7 @@ public class Customer extends User {
         budjet = budjetCustomer;
         // TODO baskets = basketCustomer;
         catalog = new Catalog();
+        basket = new Basket();
     }
 
 
@@ -42,10 +44,10 @@ public class Customer extends User {
 
                 break;
             case 4:
-                // TODO this.addProductbasket();
+                 this.addProductbasket();
                 break;
             case 5:
-                // TODO this.displayBasket();
+                this.displayBasket();
                 break;
         }
     }
@@ -53,6 +55,28 @@ public class Customer extends User {
     public void displayProduct() {
 
         System.out.println(this.catalog);
+
+    }
+
+    public void displayBasket() {
+
+        System.out.println(this.basket);
+
+    }
+
+    public void addProductbasket(){
+        System.out.println(this.catalog);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez choisir un article à ajouter au panier");
+        int choiceProduct = sc.nextInt();
+
+        Product product= catalog.getListProduct().get(choiceProduct);
+
+        basket.addProduct(product);
+        System.out.println(this.basket);
+
+
+
 
     }
 
