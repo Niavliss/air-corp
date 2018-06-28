@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
-
 import java.util.Scanner;
 
 enum Admintype {
@@ -114,9 +112,8 @@ class Admin extends User {
                     }
                     break;
 
-                default:
-                    System.out.println("Merci de faire un choix parmis cette liste ! ");
             }
+            displayMenu();
             reponse = sc.nextInt();
         } while (reponse != 9) ;
     }
@@ -171,13 +168,12 @@ class Admin extends User {
 
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Veuillez modifier le nom de l'article");
+        String nameProduct = sc1.nextLine();
 
         System.out.println("Veuillez saisir le prix de l'article à ajouter");
         Float priceProduct = sc.nextFloat();
 
-        String newProduct = sc1.nextLine();
-
-        catalog.updateProduct(idProduct, newProduct, priceProduct);
+        catalog.updateProduct(idProduct, nameProduct, priceProduct);
 
         System.out.println(this.catalog);
     }

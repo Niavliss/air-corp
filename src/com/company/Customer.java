@@ -56,6 +56,7 @@ public class Customer extends User {
                     this.displayBasket();
                     break;
             }
+            displayMenu();
             reponse = sc.nextInt();
         } while (reponse != 9);
     }
