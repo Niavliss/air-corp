@@ -52,13 +52,30 @@ public class Catalog {
 
     }
 
-    public void addProduct(int idProduct, String nameProduct ){
-        Product newProduct = new Product(idProduct, nameProduct);
+    public void addProduct(int idProduct, String nameProduct, float priceProduct ){
+        Product newProduct = new Product(idProduct, nameProduct, priceProduct);
         this.listProduct.put(idProduct, newProduct);
     }
 
-    public void updateProduct(int idProduct, String nameProduct ){
-        Product newProduct = new Product(idProduct, nameProduct);
-        this.listProduct.replace(idProduct, newProduct);
+    public void updateProduct(int idProduct, String nameProduct, float priceProduct ){
+        Product p =this.listProduct.get(idProduct);
+        p.setId(idProduct);
+        p.setName(nameProduct);
+        p.setPrice(priceProduct);
+
+        this.listProduct.replace(idProduct, p);
+
+    }
+
+    public void updatePrice(int idProduct, Float priceProduct) {
+        // récupérer l'objet du tableau à partir de l'id de l'article
+        Product p =this.listProduct.get(idProduct);
+
+        // défénir un nouveau prix
+        p.setPrice(priceProduct);
+
+        // mets à jour le tableau
+        this.listProduct.replace(idProduct, p);
+
     }
 }

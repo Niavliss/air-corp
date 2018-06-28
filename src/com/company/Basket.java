@@ -42,8 +42,8 @@ public class Basket {
         this.listArticles.add(product);
     }
 
-    public void updateProduct(int idProduct, String nameProduct ){
-        Product newProduct = new Product(idProduct, nameProduct);
+    public void updateProduct(int idProduct, String nameProduct, float priceProduct ){
+        Product newProduct = new Product(idProduct, nameProduct, priceProduct);
         this.listArticles.add(idProduct, newProduct);
     }
 }

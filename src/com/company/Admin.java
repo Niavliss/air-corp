@@ -148,7 +148,11 @@ class Admin extends User {
         System.out.println("Veuillez saisir le nom de l'article à ajouter");
         String newProduct = sc.next();
 
-        catalog.addProduct(idProduct, newProduct);
+        System.out.println("Veuillez saisir le prix de l'article à ajouter");
+        Float priceProduct = sc.nextFloat();
+
+
+        catalog.addProduct(idProduct, newProduct, priceProduct);
         System.out.println(this.catalog);
     }
 
@@ -160,11 +164,14 @@ class Admin extends User {
         int idProduct = sc.nextInt();
 
         Scanner sc1 = new Scanner(System.in);
-        System.out.println("Veuillez modifier l'article");
+        System.out.println("Veuillez modifier le nom de l'article");
+
+        System.out.println("Veuillez saisir le prix de l'article à ajouter");
+        Float priceProduct = sc.nextFloat();
 
         String newProduct = sc1.nextLine();
 
-        catalog.updateProduct(idProduct, newProduct);
+        catalog.updateProduct(idProduct, newProduct, priceProduct);
 
         System.out.println(this.catalog);
     }
