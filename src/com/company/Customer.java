@@ -95,4 +95,8 @@ public class Customer extends User {
         return budjet;
     }
 
+    @Override
+    public String toString() {
+        return " Voici "+login+" qui à pour budjet : "+budjet;
+    }
 }
