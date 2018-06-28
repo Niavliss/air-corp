@@ -1,4 +1,4 @@
-package com.company;
+package com.company.bdd;
 
 /**
  * class ItemBasket with id and Quantity attributs

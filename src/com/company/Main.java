@@ -1,6 +1,10 @@
 package com.company;
 
-import javax.swing.*;
+import com.company.profils.Admin;
+import com.company.profils.Customer;
+import com.company.profils.Marketing;
+import com.company.profils.User;
+
 import java.util.Scanner;
 
 public class Main {

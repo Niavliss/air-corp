@@ -1,4 +1,7 @@
-package com.company;
+package com.company.profils;
+
+import com.company.bdd.Catalog;
+import com.company.bdd.UserList;
 
 import java.util.Scanner;
 
@@ -19,7 +22,7 @@ enum Admintype {
 
 }
 
-class Admin extends User {
+public class Admin extends User {
 
     private String moderator;
     private Catalog catalog;

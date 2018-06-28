@@ -1,5 +1,6 @@
-package com.company;
+package com.company.profils;
 
+import com.company.bdd.Catalog;
 import java.util.Scanner;
 
 public class Marketing extends User {

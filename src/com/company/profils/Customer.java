@@ -1,4 +1,8 @@
-package com.company;
+package com.company.profils;
+
+import com.company.bdd.Basket;
+import com.company.bdd.Catalog;
+import com.company.bdd.Product;
 
 import java.util.Scanner;
 
@@ -19,17 +23,20 @@ public class Customer extends User {
     public Customer(String login, String password, double budjetCustomer) {
 
         super(login, password);
-        budjet = budjetCustomer;
-        // TODO baskets = basketCustomer;
-        catalog = new Catalog();
-        basket = new Basket();
+        this.budjet = budjetCustomer;
+        this.catalog = new Catalog();
+        this.basket = new Basket();
     }
 
     public Customer() {
 
         this.login = "";
         this.password = "";
+        this.basket = new Basket();
+        this.catalog = new Catalog();
+        this.budjet = 0;
     }
+
 
     public void displayMenu() {
         super.displayMenu();
@@ -64,7 +71,7 @@ public class Customer extends User {
 
     public void displayProduct() {
 
-        System.out.println("Voici le catalogue : "+"\n"+ this.catalog);
+        System.out.println("Voici le catalogue : " + "\n" + this.catalog);
 
     }
 
@@ -85,7 +92,7 @@ public class Customer extends User {
         Product product = catalog.getListProduct().get(choiceProduct);
 
         basket.addProduct(product);
-        System.out.println("Vous avez rajouter au panier : "+ this.basket);
+        System.out.println("Vous avez rajouter au panier : " + this.basket);
 
 
     }

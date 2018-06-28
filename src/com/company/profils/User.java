@@ -1,11 +1,11 @@
-package com.company;
+package com.company.profils;
 
 import java.util.Scanner;
 
 /**
  * abstract class User with login and password attributs
  */
-abstract class User {
+public class User {
 
     /**
      * String login and String password

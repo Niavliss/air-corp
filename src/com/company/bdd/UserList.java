@@ -1,4 +1,6 @@
-package com.company;
+package com.company.bdd;
+
+import com.company.profils.Customer;
 
 import java.util.HashMap;
 
