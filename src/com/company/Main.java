@@ -12,7 +12,7 @@ public class Main {
 
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Utilisateur ou commercial ? u/c");
+        System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
         String type = sc.nextLine();
         User customer;
         if (type.equals("u")) {
@@ -49,6 +49,17 @@ public class Main {
             else {
                 customer = new Admin();
             }
+        }
+        else if (type.equals("m")) {
+
+            System.out.println("Veuillez saisir votre login ");
+            String login = sc.nextLine();
+
+            System.out.println("Veuillez saisir votre mot de passe ");
+            String password = sc.nextLine();
+
+            customer = new Marketing(login, password);
+
         }
         else {
             customer = new Customer();
