@@ -31,18 +31,22 @@ abstract class User {
     }
 
     public void setLogin(String login) {
+
         this.login = login;
     }
 
     public void setPassword(String password) {
+
         this.password = password;
     }
 
     public String getLogin() {
+
         return login;
     }
 
     public String getPassword() {
+
         return password;
     }
 
@@ -54,8 +58,6 @@ abstract class User {
     }
 
     public void exec(int reponse) {
-        Scanner sc = new Scanner(System.in);
-        do {
 
             switch (reponse) {
 
@@ -66,11 +68,10 @@ abstract class User {
                     this.updateProfil();
                     break;
             }
-            reponse = sc.nextInt();
-        } while (reponse != 9) ;
     }
 
     public void displayProfil() {
+
         System.out.println(this.getLogin() + this.getPassword());
     }
 
