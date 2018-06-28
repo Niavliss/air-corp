@@ -75,7 +75,7 @@ class Admin extends User {
     public void exec(int reponse) {
         Scanner sc = new Scanner(System.in);
         do {
-
+            super.exec(reponse);
             switch (reponse) {
 
                 case 3:

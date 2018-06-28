@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,6 @@ public class Customer extends User {
     private Basket basket;
     private Catalog catalog;
 
-    /**
-     * @param budjetCustomer it is the budjet of customer
-     */
 
     public Customer(String login, String password, double budjetCustomer) {
 
@@ -27,7 +25,7 @@ public class Customer extends User {
         basket = new Basket();
     }
 
-    public Customer () {
+    public Customer() {
 
         this.login = "";
         this.password = "";
@@ -42,20 +40,26 @@ public class Customer extends User {
     }
 
     public void exec(int reponse) {
-        switch (reponse) {
+        Scanner sc = new Scanner(System.in);
+        do {
+            super.exec(reponse);
+            switch (reponse) {
 
-            case 3:
-                displayProduct();
+                case 3:
+                    displayProduct();
 
-                break;
-            case 4:
-                 this.addProductbasket();
-                break;
-            case 5:
-                this.displayBasket();
-                break;
-        }
+                    break;
+                case 4:
+                    this.addProductbasket();
+                    break;
+                case 5:
+                    this.displayBasket();
+                    break;
+            }
+            reponse = sc.nextInt();
+        } while (reponse != 9);
     }
+
 
     public void displayProduct() {
 
@@ -69,18 +73,16 @@ public class Customer extends User {
 
     }
 
-    public void addProductbasket(){
+    public void addProductbasket() {
         System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez choisir un article à ajouter au panier");
         int choiceProduct = sc.nextInt();
 
-        Product product= catalog.getListProduct().get(choiceProduct);
+        Product product = catalog.getListProduct().get(choiceProduct);
 
         basket.addProduct(product);
         System.out.println(this.basket);
-
-
 
 
     }
@@ -97,6 +99,6 @@ public class Customer extends User {
 
     @Override
     public String toString() {
-        return " Voici "+login+" qui à pour budjet : "+budjet;
+        return "Voici " + login + " qui à pour budjet : " + budjet + " euros.";
     }
 }
