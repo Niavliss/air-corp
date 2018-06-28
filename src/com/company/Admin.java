@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 enum Admintype {
 
-    moderator1("niveau 1"),
-    moderator2("niveau 2");
+    moderator1("1"),
+    moderator2("2");
 
-    private String moderator = "";
+    private String name ="";
 
-    Admintype(String moderator) {
-        this.moderator = moderator;
+    Admintype(String name) {
+        this.name = name;
     }
 
     public String toString() {
-        return moderator;
+        return name;
     }
 
 }
@@ -30,7 +30,8 @@ class Admin extends User {
 
         super(login, password);
         moderator = commercialmoderator;
-
+        catalog = new Catalog();
+        userList = new UserList();
     }
 
     public Admin(String login, String password) {
@@ -48,7 +49,7 @@ class Admin extends User {
     public void displayMenu() {
         super.displayMenu();
 
-        if (moderator.equals("niveau 1")) {
+        if (moderator.equals("1")) {
 
             System.out.println("Choisir 3 pour afficher la liste des articles");
             System.out.println("Choisir 4 pour supprimer un article");
@@ -56,7 +57,7 @@ class Admin extends User {
             System.out.println("Choisir 6 pour modifier un article");
             System.out.println("Choisir 9 pour sortir ");
 
-        } else if (moderator.equals("niveau 2")) {
+        } else if (moderator.equals("2")) {
 
             System.out.println("Choisir 3 pour aficher la liste des utilisateurs");
             System.out.println("Choisir 4 pour créer un utilisateur");
@@ -78,34 +79,34 @@ class Admin extends User {
             switch (reponse) {
 
                 case 3:
-                    if (moderator.equals("niveau 1")) {
+                    if (moderator.equals("1")) {
                         displayProduct();
-                    } else if (moderator.equals("niveau 2")) {
+                    } else if (moderator.equals("2")) {
                         displayUserList();
                     } else {
                     }
                     break;
 
                 case 4:
-                    if (moderator.equals("niveau 1")) {
+                    if (moderator.equals("1")) {
                         deleteProduct();
-                    } else if (moderator.equals("niveau 2")) {
+                    } else if (moderator.equals("2")) {
                         createUser();
                     } else {
                     }
                     break;
 
                 case 5:
-                    if (moderator.equals("niveau 1")) {
+                    if (moderator.equals("1")) {
                         addProduct();
-                    } else if (moderator.equals("niveau 2")) {
+                    } else if (moderator.equals("2")) {
                         deleteUser();
                     } else {
                     }
                     break;
 
                 case 6:
-                    if (moderator.equals("niveau 1")) {
+                    if (moderator.equals("2")) {
                         updateProduct();
                     } else {
                     }
