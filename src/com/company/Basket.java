@@ -1,25 +1,49 @@
 package com.company;
-import java.util.List;
 
-/**
- *  class Basket with ItemBasket []  Status attributs
- */
+import java.security.PrivateKey;
+import java.util.*;
 
 public class Basket {
 
-    /**
-     * List ItemBasket and int Status
-     */
-    List ItemBasket;
-    int Status;
 
-    /**
-     * BasketItemBasket and Basketstatus
-     *
-     */
-    public Basket (List BasketItemBasket, int Basketstatus) {
-        this.ItemBasket = BasketItemBasket;
-        this.Status = Basketstatus;
+    private ArrayList<Product> listArticles;
 
+
+    public Basket() {
+
+        listArticles = new ArrayList<Product>();
+
+    }
+
+    public ArrayList<Product> getListProduct() {
+
+        return listArticles;
+
+    }
+
+    @Override
+    public String toString() {
+
+        String result = "";
+
+        for (Product article: listArticles) {
+            result += article.toString() + "\n";
+        }
+        return result;
+    }
+
+    public void deleteProduct(int choice) {
+        this.listArticles.remove(choice);
+
+    }
+
+    public void addProduct(Product product){
+
+        this.listArticles.add(product);
+    }
+
+    public void updateProduct(int idProduct, String nameProduct ){
+        Product newProduct = new Product(idProduct, nameProduct);
+        this.listArticles.add(idProduct, newProduct);
     }
 }
