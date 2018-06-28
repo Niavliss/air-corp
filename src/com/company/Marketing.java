@@ -21,20 +21,26 @@ public class Marketing extends User {
     }
 
     public void exec(int reponse) {
-        switch (reponse) {
+        Scanner sc = new Scanner(System.in);
 
-            case 3:
-                displayProduct();
+        do {
+            super.exec(reponse);
 
-                break;
+            switch (reponse) {
 
-            case 4:
+                case 3:
+                    displayProduct();
 
-                updatePrice();
-                break;
+                    break;
 
+                case 4:
 
-        }
+                    updatePrice();
+                    break;
+
+            }
+            reponse = sc.nextInt();
+        } while (reponse != 9);
 
     }
 
@@ -55,7 +61,7 @@ public class Marketing extends User {
         System.out.println("Veuillez modifier le prix de l'article");
 
         Float priceProduct = sc1.nextFloat();
-        catalog.updatePrice(idProduct,priceProduct);
+        catalog.updatePrice(idProduct, priceProduct);
 
         System.out.println(this.catalog);
 

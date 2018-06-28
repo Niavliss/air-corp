@@ -63,7 +63,7 @@ public class Customer extends User {
 
     public void displayProduct() {
 
-        System.out.println(this.catalog);
+        System.out.println("Voici le catalogue : "+"\n"+ this.catalog);
 
     }
 
@@ -74,15 +74,17 @@ public class Customer extends User {
     }
 
     public void addProductbasket() {
-        System.out.println(this.catalog);
+        // System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
-        System.out.println("Veuillez choisir un article à ajouter au panier");
+        System.out.println("Veuillez choisir un article à ajouter au panier parmis un des articles suivant : ");
+        System.out.println(this.catalog);
         int choiceProduct = sc.nextInt();
+
 
         Product product = catalog.getListProduct().get(choiceProduct);
 
         basket.addProduct(product);
-        System.out.println(this.basket);
+        System.out.println("Vous avez rajouter au panier : "+ this.basket);
 
 
     }

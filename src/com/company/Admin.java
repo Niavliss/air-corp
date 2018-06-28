@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
+
 import java.util.Scanner;
 
 enum Admintype {
@@ -106,11 +108,14 @@ class Admin extends User {
                     break;
 
                 case 6:
-                    if (moderator.equals("2")) {
+                    if (moderator.equals("1")) {
                         updateProduct();
                     } else {
                     }
                     break;
+
+                default:
+                    System.out.println("Merci de faire un choix parmis cette liste ! ");
             }
             reponse = sc.nextInt();
         } while (reponse != 9) ;

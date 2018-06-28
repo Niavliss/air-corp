@@ -13,16 +13,16 @@ public class Catalog {
 
         listProduct = new HashMap<>();
 
-        Product tomate = new Product(1, 22, 22, "SuperTomate");
-        Product poireaux = new Product(2, 22, 22, "SuperPoireaux");
-        Product carotte = new Product(3, 22, 22, "SuperCarotte");
-        Product radis = new Product(4, 22, 22, "SuperRadis");
-        Product salade = new Product(5, 22, 22, "SuperSalade");
-        this.listProduct.put(tomate.getId(), tomate);
-        this.listProduct.put(poireaux.getId(), poireaux);
-        this.listProduct.put(carotte.getId(), carotte);
-        this.listProduct.put(radis.getId(), radis);
-        this.listProduct.put(salade.getId(), salade);
+        Product guitare = new Product(1, 22, 22, "air-guitare");
+        Product piano = new Product(2, 22, 22, "air-piano");
+        Product violon = new Product(3, 22, 22, "air-violon");
+        Product accordeon = new Product(4, 22, 22, "air-accordeon");
+        Product flute = new Product(5, 22, 22, "air-flute");
+        this.listProduct.put(guitare.getId(), guitare);
+        this.listProduct.put(piano.getId(), piano);
+        this.listProduct.put(violon.getId(), violon);
+        this.listProduct.put(accordeon.getId(), accordeon);
+        this.listProduct.put(flute.getId(), flute);
 
 
     }
@@ -41,7 +41,7 @@ public class Catalog {
         for (Integer id : listProduct.keySet()) {
 
             Product p = listProduct.get(id);
-            result += p.toString() + "\n";
+            result +=  p.toString() + "\n";
 
         }
         return result;

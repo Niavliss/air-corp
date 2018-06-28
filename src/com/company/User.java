@@ -72,7 +72,7 @@ abstract class User {
 
     public void displayProfil() {
 
-        System.out.println(this.getLogin() + this.getPassword());
+        System.out.println("Voici votre login : " + this.getLogin() +" ainsi que votre mot de passe : "+ this.getPassword());
     }
 
     public void updateProfil() {
@@ -82,6 +82,6 @@ abstract class User {
         String newpassword = sc.nextLine();
         this.password = newpassword;
 
-        System.out.println(this.getPassword());
+        System.out.println("Votre nouveau mot de passe est : "+ this.getPassword());
     }
 }
