@@ -106,12 +106,14 @@ class Admin extends User {
                     break;
 
                 case 6:
-                    if (moderator.equals("2")) {
+                    if (moderator.equals("1")) {
                         updateProduct();
                     } else {
                     }
                     break;
+
             }
+            displayMenu();
             reponse = sc.nextInt();
         } while (reponse != 9) ;
     }
@@ -166,13 +168,12 @@ class Admin extends User {
 
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Veuillez modifier le nom de l'article");
+        String nameProduct = sc1.nextLine();
 
         System.out.println("Veuillez saisir le prix de l'article à ajouter");
         Float priceProduct = sc.nextFloat();
 
-        String newProduct = sc1.nextLine();
-
-        catalog.updateProduct(idProduct, newProduct, priceProduct);
+        catalog.updateProduct(idProduct, nameProduct, priceProduct);
 
         System.out.println(this.catalog);
     }

@@ -21,6 +21,9 @@ public class Marketing extends User {
     }
 
     public void exec(int reponse) {
+        Scanner sc = new Scanner(System.in);
+        do {
+            super.exec(reponse);
         switch (reponse) {
 
             case 3:
@@ -35,6 +38,9 @@ public class Marketing extends User {
 
 
         }
+            displayMenu();
+            reponse = sc.nextInt();
+        } while (reponse != 9) ;
 
     }
 
