@@ -30,8 +30,6 @@ public class Product {
         this.name=nameProduct;
         this.id=idProduct;
     }
-    
-
 
     @Override
     public String toString() {
