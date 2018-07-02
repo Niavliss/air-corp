@@ -26,11 +26,9 @@ public class Main {
 
             System.out.println("Veuillez saisir votre mot de passe ");
             String password = sc.nextLine();
+            double billcustomer = 0;
 
-            System.out.println("Quel budjet avez-vous ? ");
-            double budjet = sc.nextDouble();
-
-            customer = new Customer(login, password, budjet);
+            customer = new Customer(login,password,billcustomer);
 
         }
         else if (type.equals("c")) {

@@ -12,11 +12,11 @@ public class UserList {
 
         listUser = new HashMap<>();
 
-        Customer michou = new Customer("Jean Michou", "jeanmich", 1200);
-        Customer mikeline = new Customer("Mikeline", "bongour", 30);
-        Customer roberte = new Customer("Mr.Roberte", "rorodu69", 450);
-        Customer paula = new Customer("Paula Miguel", "paupau", 5000);
-        Customer ryu = new Customer("Ryu", "riri", 325);
+        Customer michou = new Customer("Jean Michou", "jeanmich", 0);
+        Customer mikeline = new Customer("Mikeline", "bongour", 0);
+        Customer roberte = new Customer("Mr.Roberte", "rorodu69", 0);
+        Customer paula = new Customer("Paula Miguel", "paupau", 0);
+        Customer ryu = new Customer("Ryu", "riri", 0);
 
         this.listUser.put(michou.getLogin(), michou);
         this.listUser.put(mikeline.getLogin(), mikeline);
@@ -51,9 +51,9 @@ public class UserList {
 
     }
 
-    public void addUser(String login, String password, double budjetCustomer){
+    public void addUser(String login, String password, double billtCustomer){
 
-        Customer newUser = new Customer(login, password, budjetCustomer);
+        Customer newUser = new Customer(login, password, billtCustomer);
         this.listUser.put(login, newUser);
     }
 

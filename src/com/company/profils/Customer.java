@@ -15,15 +15,15 @@ public class Customer extends User {
     /**
      * double budjet and Basket [] baskets
      */
-    private double budjet;
+    private double bill;
     private Basket basket;
     private Catalog catalog;
 
 
-    public Customer(String login, String password, double budjetCustomer) {
+    public Customer(String login, String password, double billCustomer) {
 
         super(login, password);
-        this.budjet = budjetCustomer;
+        this.bill = billCustomer;
         this.catalog = new Catalog();
         this.basket = new Basket();
     }
@@ -34,7 +34,7 @@ public class Customer extends User {
         this.password = "";
         this.basket = new Basket();
         this.catalog = new Catalog();
-        this.budjet = 0;
+        this.bill = 0;
     }
 
 
@@ -91,24 +91,34 @@ public class Customer extends User {
 
         Product product = catalog.getListProduct().get(choiceProduct);
 
-        basket.addProduct(product);
-        System.out.println("Vous avez rajouter au panier : " + this.basket);
+        System.out.println("Nombre d'exemplaires?");
+        int quantity = sc.nextInt();
+
+        basket.addProduct(product, quantity);
+
+        System.out.println("Vous avez rajouter au panier " +quantity + " " + this.basket);
 
 
     }
 
-    public void setBudjet(double budjet) {
+    public void displayBill(){
 
-        this.budjet = budjet;
+
+
     }
 
-    public double getBudjet() {
+    public void setBillCustomer(double billCustomer) {
 
-        return budjet;
+        this.bill = billCustomer;
+    }
+
+    public double getBillCustomer() {
+
+        return bill;
     }
 
     @Override
     public String toString() {
-        return "Voici " + login + " qui à pour budjet : " + budjet + " euros.";
+        return "Voici " + login + " qui à pour facture : " + bill + " euros.";
     }
 }
