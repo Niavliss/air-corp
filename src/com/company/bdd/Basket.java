@@ -35,12 +35,12 @@ public class Basket {
 
     }
 
-    public void addProduct(Product product, int quantity){
+    public void addProduct(Product product, int quantity) {
         int currentQuantity = this.listArticles.getOrDefault(product, 0);
         int nextQuantity = currentQuantity + quantity;
         this.listArticles.put(product, nextQuantity);
         totalprice = totalprice + quantity * product.getPrice();
 
-
     }
+
 }

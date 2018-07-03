@@ -19,7 +19,7 @@ public class Customer extends User {
     private Catalog catalog;
 
 
-    public Customer(String login, String password, double billCustomer) {
+    public Customer(String login, String password) {
 
         super(login, password);
         this.catalog = new Catalog();
@@ -51,7 +51,6 @@ public class Customer extends User {
 
                 case 3:
                     displayProduct();
-
                     break;
                 case 4:
                     this.addProductbasket();
@@ -62,9 +61,7 @@ public class Customer extends User {
             }
             displayMenu();
             reponse = sc.nextInt();
-
         } while (reponse != 9);
-
     }
 
 
@@ -81,7 +78,6 @@ public class Customer extends User {
     }
 
     public void addProductbasket() {
-        // System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez choisir un article à ajouter au panier parmis un des articles suivant : ");
         System.out.println(this.catalog);
@@ -94,14 +90,17 @@ public class Customer extends User {
         int quantity = sc.nextInt();
 
         basket.addProduct(product, quantity);
+        product.decrementStock(quantity);
 
-        System.out.println("Vous avez rajouter au panier " +quantity + " " + this.basket);
+        System.out.println("Vous en avez choisi :  " + quantity);
 
 
     }
 
+
+
     @Override
     public String toString() {
-        return "Voici " + login;
+        return "Voici " + login + " qui à pour facture : " + " euros.";
     }
 }
