@@ -4,6 +4,7 @@ import com.company.bdd.Basket;
 import com.company.bdd.Catalog;
 import com.company.bdd.Product;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -45,6 +46,7 @@ public class Customer extends User {
 
     public void exec(int reponse) {
         Scanner sc = new Scanner(System.in);
+
         do {
             super.exec(reponse);
             switch (reponse) {
