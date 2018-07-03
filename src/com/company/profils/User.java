@@ -1,7 +1,7 @@
 package com.company.profils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
 /**
  * abstract class User with login and password attributs
  */
@@ -67,7 +67,9 @@ public abstract class User {
                 case 2:
                     this.updateProfil();
                     break;
+
             }
+
     }
 
     public void displayProfil() {
