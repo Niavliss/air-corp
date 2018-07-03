@@ -15,15 +15,13 @@ public class Customer extends User {
     /**
      * double budjet and Basket [] baskets
      */
-    private double bill;
     private Basket basket;
     private Catalog catalog;
 
 
-    public Customer(String login, String password, double billCustomer) {
+    public Customer(String login, String password) {
 
         super(login, password);
-        this.bill = billCustomer;
         this.catalog = new Catalog();
         this.basket = new Basket();
     }
@@ -34,7 +32,6 @@ public class Customer extends User {
         this.password = "";
         this.basket = new Basket();
         this.catalog = new Catalog();
-        this.bill = 0;
     }
 
 
@@ -54,7 +51,6 @@ public class Customer extends User {
 
                 case 3:
                     displayProduct();
-
                     break;
                 case 4:
                     this.addProductbasket();
@@ -82,7 +78,6 @@ public class Customer extends User {
     }
 
     public void addProductbasket() {
-        // System.out.println(this.catalog);
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez choisir un article à ajouter au panier parmis un des articles suivant : ");
         System.out.println(this.catalog);
@@ -95,30 +90,17 @@ public class Customer extends User {
         int quantity = sc.nextInt();
 
         basket.addProduct(product, quantity);
+        product.decrementStock(quantity);
 
-        System.out.println("Vous avez rajouter au panier " +quantity + " " + this.basket);
-
-
-    }
-
-    public void displayBill(){
-
+        System.out.println("Vous en avez choisi :  " + quantity);
 
 
     }
 
-    public void setBillCustomer(double billCustomer) {
 
-        this.bill = billCustomer;
-    }
-
-    public double getBillCustomer() {
-
-        return bill;
-    }
 
     @Override
     public String toString() {
-        return "Voici " + login + " qui à pour facture : " + bill + " euros.";
+        return "Voici " + login + " qui à pour facture : " + " euros.";
     }
 }

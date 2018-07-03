@@ -14,7 +14,6 @@ public class Main {
 
         // Window fence = new Window();
 
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
         String type = sc.nextLine();
@@ -26,9 +25,8 @@ public class Main {
 
             System.out.println("Veuillez saisir votre mot de passe ");
             String password = sc.nextLine();
-            double billcustomer = 0;
 
-            customer = new Customer(login,password,billcustomer);
+            customer = new Customer(login,password);
 
         }
         else if (type.equals("c")) {

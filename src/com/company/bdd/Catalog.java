@@ -77,4 +77,15 @@ public class Catalog {
         this.listProduct.replace(idProduct, p);
 
     }
+
+    public void updateStock (int idProduct, int stockProduct) {
+
+        Product p = this.listProduct.get(idProduct);
+        p.setStock(stockProduct);
+
+        this.listProduct.replace(idProduct, p);
+
+    }
+
+
 }

@@ -204,7 +204,7 @@ public class Admin extends User {
         System.out.println("Veuillez saisir le budjet de l'utilisateur");
         Double userBudjet = sc.nextDouble();
 
-        userList.addUser(userLogin, userPassword, userBudjet);
+        userList.addUser(userLogin, userPassword);
         System.out.println(this.userList);
     }
 
