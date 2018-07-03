@@ -69,6 +69,7 @@ public class Main {
 
         customer.displayMenu();
         int reponse = sc.nextInt();
+
         customer.exec(reponse);
 
     }

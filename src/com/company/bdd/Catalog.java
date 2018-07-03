@@ -66,7 +66,7 @@ public class Catalog {
 
     }
 
-    public void updatePrice(int idProduct, Float priceProduct) {
+    public void  updatePrice(int idProduct, Float priceProduct) {
         // récupérer l'objet du tableau à partir de l'id de l'article
         Product p =this.listProduct.get(idProduct);
 

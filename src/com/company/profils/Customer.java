@@ -15,7 +15,6 @@ public class Customer extends User {
     /**
      * double budjet and Basket [] baskets
      */
-    private double bill;
     private Basket basket;
     private Catalog catalog;
 
@@ -23,7 +22,6 @@ public class Customer extends User {
     public Customer(String login, String password, double billCustomer) {
 
         super(login, password);
-        this.bill = billCustomer;
         this.catalog = new Catalog();
         this.basket = new Basket();
     }
@@ -34,7 +32,6 @@ public class Customer extends User {
         this.password = "";
         this.basket = new Basket();
         this.catalog = new Catalog();
-        this.bill = 0;
     }
 
 
@@ -65,7 +62,9 @@ public class Customer extends User {
             }
             displayMenu();
             reponse = sc.nextInt();
+
         } while (reponse != 9);
+
     }
 
 
@@ -101,24 +100,8 @@ public class Customer extends User {
 
     }
 
-    public void displayBill(){
-
-
-
-    }
-
-    public void setBillCustomer(double billCustomer) {
-
-        this.bill = billCustomer;
-    }
-
-    public double getBillCustomer() {
-
-        return bill;
-    }
-
     @Override
     public String toString() {
-        return "Voici " + login + " qui à pour facture : " + bill + " euros.";
+        return "Voici " + login;
     }
 }
