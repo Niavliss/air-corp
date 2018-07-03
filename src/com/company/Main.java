@@ -5,6 +5,7 @@ import com.company.profils.Customer;
 import com.company.profils.Marketing;
 import com.company.profils.User;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -65,10 +66,17 @@ public class Main {
             customer = new Customer();
         }
 
+        try {
         customer.displayMenu();
         int reponse = sc.nextInt();
 
         customer.exec(reponse);
+
+        } catch (InputMismatchException err) {
+
+            System.out.println("Tu n'as pas choisi de Chiffre ! Dehors !!");
+
+        }
 
     }
 
