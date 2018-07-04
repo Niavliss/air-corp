@@ -182,7 +182,6 @@ public class Admin extends User {
     }
 
 
-
     // Methods related to commercial type 2
 
     public void displayUserList() {
@@ -200,9 +199,6 @@ public class Admin extends User {
 
         System.out.println("Veuillez saisir le mot de passe de l'utilisateur");
         String userPassword = sc.next();
-
-        System.out.println("Veuillez saisir le budjet de l'utilisateur");
-        Double userBudjet = sc.nextDouble();
 
         userList.addUser(userLogin, userPassword);
         System.out.println(this.userList);
