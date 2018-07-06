@@ -1,6 +1,9 @@
 package com.company.bdd;
 
+import java.sql.*;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Catalog {
 
@@ -11,6 +14,7 @@ public class Catalog {
     public Catalog() {
 
         listProduct = new HashMap<>();
+
 
         Product guitare = new Product(1, 22, 22, "air-guitare");
         Product piano = new Product(2, 22, 22, "air-piano");
@@ -25,6 +29,7 @@ public class Catalog {
 
 
     }
+
 
     public HashMap<Integer, Product> getListProduct() {
 
@@ -86,6 +91,4 @@ public class Catalog {
         this.listProduct.replace(idProduct, p);
 
     }
-
-
 }
