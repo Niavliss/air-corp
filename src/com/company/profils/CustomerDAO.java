@@ -32,7 +32,7 @@ public class CustomerDAO {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM userlist WHERE idProduct = ? ");
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM listuser WHERE idProduct = ? ");
             if (result.first())
                 user = new Customer(
                         result.getString("login"),

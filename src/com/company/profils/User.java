@@ -19,13 +19,6 @@ public abstract class User {
     protected String login;
     protected String password;
 
-//        Class.forName("org.mariadb.jdbcDriver");
-//        String url = "jdbc:mariadb://localhost:3306";
-//        String user = "root";
-//        String passwd = "root";
-//
-//        Connection connect = DriverManager.getConnection(url, user, passwd);
-//        Statement state = connect.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)
 
     /**
      * @param userlogin

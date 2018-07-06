@@ -114,7 +114,7 @@ public class Main {
 
         try {
 
-            PreparedStatement prepare = BddConnection.getInstance().prepareStatement("SELECT * FROM userlist WHERE idProduct = ? ");
+            PreparedStatement prepare = BddConnection.getInstance().prepareStatement("SELECT * FROM listuser WHERE idProduct = ? ");
             Statement state = BddConnection.getInstance().createStatement();
 
         } catch (Exception e ) {
