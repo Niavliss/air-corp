@@ -4,6 +4,10 @@ import com.company.bdd.Basket;
 import com.company.bdd.Catalog;
 import com.company.bdd.Product;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

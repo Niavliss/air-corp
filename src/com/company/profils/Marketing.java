@@ -10,7 +10,15 @@ public class Marketing extends User {
     public Marketing(String login, String password) {
 
         super(login, password);
-        catalog = new Catalog();
+        this.catalog = new Catalog();
+
+    }
+
+    public Marketing () {
+
+        this.login = "";
+        this.password = "";
+        this.catalog = new Catalog();
 
     }
 

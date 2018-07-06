@@ -1,18 +1,28 @@
 package com.company;
 
-import com.company.profils.Admin;
-import com.company.profils.Customer;
-import com.company.profils.Marketing;
-import com.company.profils.User;
+import com.company.profils.*;
+
+import java.sql.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.lang.String;
 
 public class Main {
 
     public static void main(String[] args) {
 
         // Window fence = new Window();
+
+        try {
+
+            PreparedStatement prepare = BddConnection.getInstance().prepareStatement("SELECT * FROM userlist WHERE idProduct = ? ");
+            Statement state = BddConnection.getInstance().createStatement();
+
+        } catch (Exception e ) {
+            e.printStackTrace();
+        }
+
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
@@ -26,7 +36,8 @@ public class Main {
             System.out.println("Veuillez saisir votre mot de passe ");
             String password = sc.nextLine();
 
-            customer = new Customer(login,password);
+            customer = new Customer(login, password);
+//            CustomerDAO user= new CustomerDAO(Connection.getInstance());
 
         }
         else if (type.equals("c")) {

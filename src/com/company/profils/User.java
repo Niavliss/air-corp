@@ -1,6 +1,12 @@
 package com.company.profils;
 
-import java.util.InputMismatchException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.lang.Exception;
+import java.lang.ClassNotFoundException;
 import java.util.Scanner;
 /**
  * abstract class User with login and password attributs
@@ -12,6 +18,14 @@ public abstract class User {
      */
     protected String login;
     protected String password;
+
+//        Class.forName("org.mariadb.jdbcDriver");
+//        String url = "jdbc:mariadb://localhost:3306";
+//        String user = "root";
+//        String passwd = "root";
+//
+//        Connection connect = DriverManager.getConnection(url, user, passwd);
+//        Statement state = connect.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)
 
     /**
      * @param userlogin
