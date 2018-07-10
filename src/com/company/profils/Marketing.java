@@ -7,6 +7,14 @@ public class Marketing extends User {
 
     private Catalog catalog;
 
+    public Marketing(int userid, String login, String password, int type) {
+
+        super(userid, login, password, type);
+        this.catalog = new Catalog();
+
+    }
+
+
     public Marketing(String login, String password) {
 
         super(login, password);

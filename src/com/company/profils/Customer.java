@@ -23,6 +23,13 @@ public class Customer extends User {
     private Basket basket;
     private Catalog catalog;
 
+    public Customer(int userid, String login, String password, int type) {
+
+        super(userid, login, password, type);
+        this.catalog = new Catalog();
+        this.basket = new Basket();
+    }
+
 
     public Customer(String login, String password) {
 
@@ -30,6 +37,7 @@ public class Customer extends User {
         this.catalog = new Catalog();
         this.basket = new Basket();
     }
+
 
     public Customer() {
 

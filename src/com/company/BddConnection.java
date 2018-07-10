@@ -3,14 +3,11 @@ package com.company;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class BddConnection {
 
-//    Class.forName("org.mariadb.jdbcDriver");
-    private static String url = "jdbc:mariadb://localhost:3306";
+    //    Class.forName("org.mariadb.jdbcDriver");
+    private static String url = "jdbc:mariadb://localhost:3306/aircorp";
     private static String user = "root";
     private static String passwd = "root";
     private static Connection connect;
@@ -18,8 +15,7 @@ public class BddConnection {
     private BddConnection() {
 
         try {
-            java.sql.Connection connect = DriverManager.getConnection(url, user, passwd);
-            Statement state = connect.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            connect = DriverManager.getConnection(url, user, passwd);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -27,12 +23,11 @@ public class BddConnection {
 
     public static Connection getInstance() {
         if (connect == null) {
-            try {
-                connect = DriverManager.getConnection(url, user, passwd);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+
+            new BddConnection();
+
         }
+
         return connect;
     }
 

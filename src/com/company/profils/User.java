@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.lang.Exception;
 import java.lang.ClassNotFoundException;
 import java.util.Scanner;
+
 /**
  * abstract class User with login and password attributs
  */
@@ -16,14 +17,20 @@ public abstract class User {
     /**
      * String login and String password
      */
+    protected int idUser = 0;
     protected String login;
     protected String password;
+    protected int Type = 0;
 
 
-    /**
-     * @param userlogin
-     * @param userpassword
-     */
+    public User(int userid, String userlogin, String userpassword, int type) {
+
+        this.idUser = userid;
+        this.login = userlogin;
+        this.password = userpassword;
+        this.Type = type;
+    }
+
     public User(String userlogin, String userpassword) {
 
         this.login = userlogin;
@@ -37,6 +44,14 @@ public abstract class User {
 
     }
 
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public void setType(int type) {
+        Type = type;
+    }
+
     public void setLogin(String login) {
 
         this.login = login;
@@ -45,6 +60,14 @@ public abstract class User {
     public void setPassword(String password) {
 
         this.password = password;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public int getType() {
+        return Type;
     }
 
     public String getLogin() {
@@ -66,22 +89,22 @@ public abstract class User {
 
     public void exec(int reponse) {
 
-            switch (reponse) {
+        switch (reponse) {
 
-                case 1:
-                    this.displayProfil();
-                    break;
-                case 2:
-                    this.updateProfil();
-                    break;
+            case 1:
+                this.displayProfil();
+                break;
+            case 2:
+                this.updateProfil();
+                break;
 
-            }
+        }
 
     }
 
     public void displayProfil() {
 
-        System.out.println("Voici votre login : " + this.getLogin() +" ainsi que votre mot de passe : "+ this.getPassword());
+        System.out.println("Voici votre login : " + this.getLogin() + " ainsi que votre mot de passe : " + this.getPassword());
     }
 
     public void updateProfil() {
@@ -91,6 +114,6 @@ public abstract class User {
         String newpassword = sc.nextLine();
         this.password = newpassword;
 
-        System.out.println("Votre nouveau mot de passe est : "+ this.getPassword());
+        System.out.println("Votre nouveau mot de passe est : " + this.getPassword());
     }
 }
