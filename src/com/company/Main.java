@@ -179,15 +179,28 @@ public class Main {
                 userDao.create(user);
 
             }
+            else {
+
+                userDao = new UserDAO(BddConnection.getInstance());
+            }
+
+            try {
+
+//                userDao.displayMenu();
+//                int reponse = sc.nextInt();
+//
+//                userDao.exec(reponse);
+
+            } catch (InputMismatchException err) {
+
+                System.out.println("Tu n'a pas choisi de réponse correcte...");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-//        return userDao;
-//        userDao.display();
-//        execute;
 
     }
 
