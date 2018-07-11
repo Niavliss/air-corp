@@ -7,32 +7,33 @@ import java.util.Scanner;
 
 enum Admintype {
 
-    moderator1("1"),
-    moderator2("2");
+    usertype1(2),
+    usertype2(3);
 
-    private String name ="";
+    private int value;
 
-    Admintype(String name) {
-        this.name = name;
+    Admintype(int value) {
+
+        this.value = value;
     }
 
-    public String toString() {
-        return name;
+    public int getValue() {
+
+        return value;
     }
 
 }
 
 public class Admin extends User {
 
-    private String moderator;
+    private int usertype;
     private Catalog catalog;
     private UserList userList;
 
 
-    public Admin(String login, String password, String commercialmoderator) {
+    public Admin(String login, String password, int usertype) {
 
-        super(login, password);
-        moderator = commercialmoderator;
+        super(login, password, usertype);
         catalog = new Catalog();
         userList = new UserList();
 
@@ -53,7 +54,7 @@ public class Admin extends User {
     public void displayMenu() {
         super.displayMenu();
 
-        if (moderator.equals("1")) {
+        if (usertype == 2) {
 
             System.out.println("Choisir 3 pour afficher la liste des articles");
             System.out.println("Choisir 4 pour supprimer un article");
@@ -61,7 +62,7 @@ public class Admin extends User {
             System.out.println("Choisir 6 pour modifier un article");
             System.out.println("Choisir 9 pour sortir ");
 
-        } else if (moderator.equals("2")) {
+        } else if (usertype == 3) {
 
             System.out.println("Choisir 3 pour aficher la liste des utilisateurs");
             System.out.println("Choisir 4 pour créer un utilisateur");
@@ -83,34 +84,34 @@ public class Admin extends User {
             switch (reponse) {
 
                 case 3:
-                    if (moderator.equals("1")) {
+                    if (usertype == 2) {
                         displayProduct();
-                    } else if (moderator.equals("2")) {
+                    } else if (usertype == 3) {
                         displayUserList();
                     } else {
                     }
                     break;
 
                 case 4:
-                    if (moderator.equals("1")) {
+                    if (usertype == 2) {
                         deleteProduct();
-                    } else if (moderator.equals("2")) {
+                    } else if (usertype == 3) {
                         createUser();
                     } else {
                     }
                     break;
 
                 case 5:
-                    if (moderator.equals("1")) {
+                    if (usertype == 2) {
                         addProduct();
-                    } else if (moderator.equals("2")) {
+                    } else if (usertype == 3) {
                         deleteUser();
                     } else {
                     }
                     break;
 
                 case 6:
-                    if (moderator.equals("1")) {
+                    if (usertype == 2) {
                         updateProduct();
                     } else {
                     }
@@ -218,14 +219,14 @@ public class Admin extends User {
 
     }
 
-    public void setModerator(String moderator) {
+    public void setUsertype(int usertype) {
 
-        this.moderator = moderator;
+        this.usertype = usertype;
     }
 
-    public String getModerator() {
+    public int getUertype() {
 
-        return moderator;
+        return usertype;
     }
 
     public void setCatalog(Catalog catalog) {

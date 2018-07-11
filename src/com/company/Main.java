@@ -132,8 +132,6 @@ public class Main {
             // si l'utilisateur choisi c
             else if (type.equals("c")) {
 
-                int usertype = 2;
-
                 System.out.println("Veuillez saisir votre login de commercial");
                 String login = sc.nextLine();
 
@@ -146,19 +144,21 @@ public class Main {
                 // si l'utilisateur choisi 1
                 if (moderator.equals("1")) {
 
-//                    UserDAO userDao = new UserDAO(BddConnection.getInstance());
-                    User user = new Admin(login, password, "1");
+                    int usertype = 2;
 
-//                    userDao.create(user);
+                    User user = new Admin(login, password, usertype);
+
+                    userDao.create(user);
 
                 }
                 // si l'utilisateur choisi 2
                 else if (moderator.equals("2")) {
 
-//                    UserDAO userDao = new UserDAO(BddConnection.getInstance());
-                    User user = new Admin(login, password, "2");
+                    int usertype = 3;
 
-//                    userDao.create(user);
+                    User user = new Admin(login, password, usertype);
+
+                    userDao.create(user);
 
                 }
             }
@@ -184,7 +184,10 @@ public class Main {
             e.printStackTrace();
         }
 
-//        return user;
+
+//        return userDao;
+//        userDao.display();
+//        execute;
 
     }
 
