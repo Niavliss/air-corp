@@ -96,7 +96,6 @@ public class Main {
         // air-corp sans bdd
 
 
-
         try {
 
             UserDAO userDao = new UserDAO(BddConnection.getInstance());
@@ -110,6 +109,8 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
             String type = sc.nextLine();
+
+//            User user;
 
 //            if (result.first())
 
@@ -127,6 +128,12 @@ public class Main {
                 User user = new Customer(login, password, usertype);
 
                 userDao.create(user);
+
+                user.displayMenu();
+                int reponse = sc.nextInt();
+
+                user.exec(reponse);
+
             }
 
             // si l'utilisateur choisi c
@@ -150,6 +157,11 @@ public class Main {
 
                     userDao.create(user);
 
+                    user.displayMenu();
+                    int reponse = sc.nextInt();
+
+                    user.exec(reponse);
+
                 }
                 // si l'utilisateur choisi 2
                 else if (moderator.equals("2")) {
@@ -159,6 +171,11 @@ public class Main {
                     User user = new Admin(login, password, usertype);
 
                     userDao.create(user);
+
+                    user.displayMenu();
+                    int reponse = sc.nextInt();
+
+                    user.exec(reponse);
 
                 }
             }
@@ -178,37 +195,40 @@ public class Main {
 
                 userDao.create(user);
 
+                user.displayMenu();
+                int reponse = sc.nextInt();
+
+                user.exec(reponse);
+
             }
-            else {
+//            else {
+//
+//                test = new Customer();
+//            }
 
-                userDao = new UserDAO(BddConnection.getInstance());
-            }
-
-            try {
-
-//                userDao.displayMenu();
+//            try {
+//
+//                user.displayMenu();
 //                int reponse = sc.nextInt();
 //
-//                userDao.exec(reponse);
+//                user.exec(reponse);
+//
+//            } catch (InputMismatchException err) {
+//
+//                System.out.println("Tu n'a pas choisi de réponse correcte...");
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
-            } catch (InputMismatchException err) {
 
-                System.out.println("Tu n'a pas choisi de réponse correcte...");
-            }
+        } catch (InputMismatchException err) {
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Tu n'as pas choisi de Chiffre ! Dehors !!");
+
         }
 
 
-
     }
-
-//             catch (InputMismatchException err) {
-//
-//                System.out.println("Tu n'as pas choisi de Chiffre ! Dehors !!");
-//
-//            }
-
-
 }
