@@ -99,7 +99,7 @@ public class Main {
 
         try {
 
-//            UserDAO userDao = new UserDAO(BddConnection.getInstance());
+            UserDAO userDao = new UserDAO(BddConnection.getInstance());
 //            userDao.find();
 
 
@@ -126,7 +126,7 @@ public class Main {
 
                 User user = new Customer(login, password, usertype);
 
-                UserDAO.create(user);
+                userDao.create(user);
             }
 
             // si l'utilisateur choisi c
@@ -166,16 +166,17 @@ public class Main {
             // si l'utilisateur choisi m
             else if (type.equals("m")) {
 
+                int usertype = 4;
+
                 System.out.println("Veuillez saisir votre login ");
                 String login = sc.nextLine();
 
                 System.out.println("Veuillez saisir votre mot de passe ");
                 String password = sc.nextLine();
 
-//                UserDAO userDao = new UserDAO(BddConnection.getInstance());
-                User user = new Marketing(login, password);
+                User user = new Marketing(login, password, usertype);
 
-//                userDao.create(user);
+                userDao.create(user);
 
             }
 

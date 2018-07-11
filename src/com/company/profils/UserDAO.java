@@ -9,22 +9,16 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-//    protected Connection connect = null;
+    protected Connection connect = null;
 
-//    public UserDAO(Connection conn) {
-//
-//
-//        this.connect = conn;
-//    }
+    public UserDAO(Connection conn) {
 
-    public static void create(User obj) {
-        BddConnection newconnect = new BddConnection();
-        Connection connect = newconnect.getInstance();
 
-        create(obj, connect);
+        this.connect = conn;
     }
 
-    public static void create(User obj, Connection connect) {
+
+    public void create(User obj) {
 
         try {
             PreparedStatement prepare = connect.prepareStatement("INSERT INTO listuser (login, password, usertype) VALUES (?, ?, ?)");

@@ -35,6 +35,7 @@ public class Admin extends User {
         moderator = commercialmoderator;
         catalog = new Catalog();
         userList = new UserList();
+
     }
 
     public Admin(String login, String password) {
