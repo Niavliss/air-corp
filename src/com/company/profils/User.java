@@ -23,12 +23,11 @@ public abstract class User {
     protected int Type = 0;
 
 
-    public User(int userid, String userlogin, String userpassword, int type) {
+    public User(String userlogin, String userpassword, int usertype) {
 
-        this.idUser = userid;
         this.login = userlogin;
         this.password = userpassword;
-        this.Type = type;
+        this.Type = usertype;
     }
 
     public User(String userlogin, String userpassword) {

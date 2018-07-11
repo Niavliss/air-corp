@@ -5,6 +5,7 @@ import com.company.profils.*;
 
 import java.sql.*;
 import java.util.InputMismatchException;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.lang.String;
 
@@ -40,7 +41,7 @@ public class Main {
 //            }
 
 
-            // Ajout d'un produit
+        // Ajout d'un produit
 
 //
 //            PreparedStatement prepare = conn.prepareStatement("INSERT INTO listproduct (idProduct, stockProduit, priceProduct, nameProduct) VALUES (?, ?, ?, ?)") ;
@@ -54,7 +55,7 @@ public class Main {
 //            prepare.execute();
 //            System.out.println(prepare.toString());
 
-            // Enlève un produit
+        // Enlève un produit
 
 //            PreparedStatement prepare2 = conn.prepareStatement("DELETE FROM listproduct WHERE idProduct = ?") ;
 //            //On paramètre notre requête préparée
@@ -92,88 +93,105 @@ public class Main {
 //        }
 
 
-            // air-corp sans bdd
+        // air-corp sans bdd
+
+
 
         try {
 
-            PreparedStatement prepare = BddConnection.getInstance().prepareStatement("SELECT * FROM listuser WHERE idUser = ? ");
-            Statement state = BddConnection.getInstance().createStatement();
+//            UserDAO userDao = new UserDAO(BddConnection.getInstance());
+//            userDao.find();
 
-            UserDAO user = new UserDAO(BddConnection.getInstance());
-            user.find();
 
-        } catch (Exception e ) {
+//            ResultSet result = this.connect.createStatement(
+//                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+//                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM listuser WHERE idUser = '?' ");
+
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
+            String type = sc.nextLine();
+
+//            if (result.first())
+
+            // si l'utilisateur choisi u:
+            if (type.equals("u")) {
+
+                int usertype = 1;
+
+                System.out.println("Veuillez saisir votre login ");
+                String login = sc.nextLine();
+
+                System.out.println("Veuillez saisir votre mot de passe ");
+                String password = sc.nextLine();
+
+                User user = new Customer(login, password, usertype);
+
+                UserDAO.create(user);
+            }
+
+            // si l'utilisateur choisi c
+            else if (type.equals("c")) {
+
+                int usertype = 2;
+
+                System.out.println("Veuillez saisir votre login de commercial");
+                String login = sc.nextLine();
+
+                System.out.println("Veuillez saisir votre mot de passe commercial");
+                String password = sc.nextLine();
+
+                System.out.println("Commercial de niveau 1 ou Commercial de niveau 2 ?");
+                String moderator = sc.nextLine();
+
+                // si l'utilisateur choisi 1
+                if (moderator.equals("1")) {
+
+//                    UserDAO userDao = new UserDAO(BddConnection.getInstance());
+                    User user = new Admin(login, password, "1");
+
+//                    userDao.create(user);
+
+                }
+                // si l'utilisateur choisi 2
+                else if (moderator.equals("2")) {
+
+//                    UserDAO userDao = new UserDAO(BddConnection.getInstance());
+                    User user = new Admin(login, password, "2");
+
+//                    userDao.create(user);
+
+                }
+            }
+
+            // si l'utilisateur choisi m
+            else if (type.equals("m")) {
+
+                System.out.println("Veuillez saisir votre login ");
+                String login = sc.nextLine();
+
+                System.out.println("Veuillez saisir votre mot de passe ");
+                String password = sc.nextLine();
+
+//                UserDAO userDao = new UserDAO(BddConnection.getInstance());
+                User user = new Marketing(login, password);
+
+//                userDao.create(user);
+
+            }
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
+//        return user;
 
+    }
 
-
-
-//            Scanner sc = new Scanner(System.in);
-//            System.out.println("Utilisateur,  commercial, marketing manager ? u/c/m");
-//            String type = sc.nextLine();
-//            if (type.equals("u")) {
-//
-//                System.out.println("Veuillez saisir votre login ");
-//                String login = sc.nextLine();
-//
-//                System.out.println("Veuillez saisir votre mot de passe ");
-//                String password = sc.nextLine();
-//
-//                UserDAO userDao = new UserDAO(BddConnection.getInstance());
-//                User user = new Customer(login, password);
-//
-//                userDao.create(user);
-//
-//            }
-//            else if (type.equals("c")) {
-//                System.out.println("Veuillez saisir votre login de commercial");
-//                String login = sc.nextLine();
-//
-//                System.out.println("Veuillez saisir votre mot de passe commercial");
-//                String password = sc.nextLine();
-//
-//                System.out.println("Commercial de niveau 1 ou Commercial de niveau 2 ?");
-//                String moderator = sc.nextLine();
-//
-//
-//                if (moderator.equals("1")) {
-//                    customer = new Admin(login, password, "1");
-//                } else if (moderator.equals("2")) {
-//                    customer = new Admin(login, password, "2");
-//                } else {
-//                    customer = new Admin();
-//                }
-//            }
-//            else if (type.equals("m")) {
-//
-//                System.out.println("Veuillez saisir votre login ");
-//                String login = sc.nextLine();
-//
-//                System.out.println("Veuillez saisir votre mot de passe ");
-//                String password = sc.nextLine();
-//
-//                customer = new Marketing(login, password);
-//
-//            } else {
-//                customer = new Customer();
-//            }
-//
-//            try {
-//                customer.displayMenu();
-//                int reponse = sc.nextInt();
-//
-//                customer.exec(reponse);
-//
-//            } catch (InputMismatchException err) {
+//             catch (InputMismatchException err) {
 //
 //                System.out.println("Tu n'as pas choisi de Chiffre ! Dehors !!");
 //
 //            }
-//
-//        }
 
 
-    }
 }

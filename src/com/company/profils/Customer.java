@@ -23,9 +23,9 @@ public class Customer extends User {
     private Basket basket;
     private Catalog catalog;
 
-    public Customer(int userid, String login, String password, int type) {
+    public Customer(String login, String password, int usertype) {
 
-        super(userid, login, password, type);
+        super(login, password, usertype);
         this.catalog = new Catalog();
         this.basket = new Basket();
     }
@@ -113,8 +113,8 @@ public class Customer extends User {
 
 
 
-    @Override
-    public String toString() {
-        return "Voici " + login + " qui à pour facture : " + " euros.";
-    }
+//    @Override
+//    public String toString() {
+//        return "Voici " + login + " qui à pour facture : " + " euros.";
+//    }
 }

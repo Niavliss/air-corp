@@ -12,7 +12,7 @@ public class BddConnection {
     private static String passwd = "root";
     private static Connection connect;
 
-    private BddConnection() {
+    public BddConnection() {
 
         try {
             connect = DriverManager.getConnection(url, user, passwd);
