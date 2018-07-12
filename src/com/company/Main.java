@@ -15,7 +15,7 @@ public class Main {
 
 
 //        try {
-
+//
 //            //Affichage de la liste de produits :
 //
 //            //Création d'un objet Statement

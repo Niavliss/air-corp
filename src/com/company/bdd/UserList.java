@@ -58,4 +58,13 @@ public class UserList {
     }
 
 
+    public void updateUser(String login, String password, int usertype) {
+
+        Customer u =this.listUser.get(login);
+        u.setLogin(login);
+        u.setPassword(password);
+        u.setType(usertype);
+
+        this.listUser.replace(login, u);
+    }
 }

@@ -1,8 +1,10 @@
 package com.company.profils;
 
+import com.company.BddConnection;
 import com.company.bdd.Catalog;
 import com.company.bdd.UserList;
 
+import java.util.List;
 import java.util.Scanner;
 
 enum Admintype {
@@ -26,7 +28,7 @@ enum Admintype {
 
 public class Admin extends User {
 
-    private int usertype;
+    private int type;
     private Catalog catalog;
     private UserList userList;
 
@@ -34,6 +36,7 @@ public class Admin extends User {
     public Admin(String login, String password, int usertype) {
 
         super(login, password, usertype);
+        type = usertype;
         catalog = new Catalog();
         userList = new UserList();
 
@@ -54,7 +57,7 @@ public class Admin extends User {
     public void displayMenu() {
         super.displayMenu();
 
-        if (usertype == 2) {
+        if (type == 2) {
 
             System.out.println("Choisir 3 pour afficher la liste des articles");
             System.out.println("Choisir 4 pour supprimer un article");
@@ -62,11 +65,12 @@ public class Admin extends User {
             System.out.println("Choisir 6 pour modifier un article");
             System.out.println("Choisir 9 pour sortir ");
 
-        } else if (usertype == 3) {
+        } else if (type == 3) {
 
             System.out.println("Choisir 3 pour aficher la liste des utilisateurs");
             System.out.println("Choisir 4 pour créer un utilisateur");
             System.out.println("Choisir 5 pour supprimer un utilisateur");
+            System.out.println("Choisir 6 pour modifier un utilisateur");
             System.out.println("Choisir 9 pour sortir ");
 
         } else {
@@ -84,35 +88,37 @@ public class Admin extends User {
             switch (reponse) {
 
                 case 3:
-                    if (usertype == 2) {
+                    if (type == 2) {
                         displayProduct();
-                    } else if (usertype == 3) {
+                    } else if (type == 3) {
                         displayUserList();
                     } else {
                     }
                     break;
 
                 case 4:
-                    if (usertype == 2) {
+                    if (type == 2) {
                         deleteProduct();
-                    } else if (usertype == 3) {
+                    } else if (type == 3) {
                         createUser();
                     } else {
                     }
                     break;
 
                 case 5:
-                    if (usertype == 2) {
+                    if (type == 2) {
                         addProduct();
-                    } else if (usertype == 3) {
+                    } else if (type == 3) {
                         deleteUser();
                     } else {
                     }
                     break;
 
                 case 6:
-                    if (usertype == 2) {
+                    if (type == 2) {
                         updateProduct();
+                    } else if (type == 3){
+                        updateUser();
                     } else {
                     }
                     break;
@@ -122,7 +128,6 @@ public class Admin extends User {
             reponse = sc.nextInt();
         } while (reponse != 9) ;
     }
-
 
 
     // Methods related to commercial type 1
@@ -188,7 +193,9 @@ public class Admin extends User {
 
     public void displayUserList() {
 
-        System.out.println(this.userList);
+        UserDAO userDao = new UserDAO(BddConnection.getInstance());
+        List <User> list = userDao.findAll();
+
 
     }
 
@@ -219,14 +226,34 @@ public class Admin extends User {
 
     }
 
-    public void setUsertype(int usertype) {
+    private void updateUser() {
 
-        this.usertype = usertype;
+        System.out.println(this.userList);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez saisir un utilisateur");
+        String login = sc.next();
+
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("Veuillez modifier le mot de passe");
+        String password = sc1.nextLine();
+
+        System.out.println("Veuillez modifier le type d'utilisateur");
+        int usertype = sc.nextInt();
+
+        userList.updateUser(login, password, usertype);
+
+        System.out.println(this.userList);
+
     }
 
-    public int getUertype() {
+    public void setType(int usertype) {
 
-        return usertype;
+        this.type = usertype;
+    }
+
+    public int getType() {
+
+        return type;
     }
 
     public void setCatalog(Catalog catalog) {

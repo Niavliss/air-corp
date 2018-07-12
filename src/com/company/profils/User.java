@@ -20,7 +20,7 @@ public abstract class User {
     protected int idUser = 0;
     protected String login;
     protected String password;
-    protected int Type = 0;
+    protected int Type;
 
 
     public User(String userlogin, String userpassword, int usertype) {
