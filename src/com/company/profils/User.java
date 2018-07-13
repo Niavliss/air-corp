@@ -17,7 +17,7 @@ public abstract class User {
     /**
      * String login and String password
      */
-    protected int idUser = 0;
+    protected int idUser;
     protected String login;
     protected String password;
     protected int Type;
@@ -66,6 +66,7 @@ public abstract class User {
     }
 
     public int getType() {
+
         return Type;
     }
 
@@ -114,5 +115,12 @@ public abstract class User {
         this.password = newpassword;
 
         System.out.println("Votre nouveau mot de passe est : " + this.getPassword());
+    }
+
+    @Override
+    public String toString() {
+
+        return this.getIdUser() +" "+ this.login +" "+ this.password +" "+ this.Type;
+
     }
 }

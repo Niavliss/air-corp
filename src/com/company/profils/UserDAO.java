@@ -72,18 +72,61 @@ public class UserDAO {
             ResultSetMetaData resultMeta = result.getMetaData();
 
 
-            System.out.println("\n**********************************");
-//            On affiche le nom des colonnes
-            for (int i = 1; i <= resultMeta.getColumnCount(); i++)
-                System.out.print("\t" + resultMeta.getColumnName(i).toUpperCase() + "\t *");
-
-            System.out.println("\n**********************************");
+//            System.out.println("\n**********************************");
+////            On affiche le nom des colonnes
+//            for (int i = 1; i <= resultMeta.getColumnCount(); i++)
+//                System.out.print("\t" + resultMeta.getColumnName(i).toUpperCase() + "\t *");
+//
+//            System.out.println("\n**********************************");
 
             while (result.next()) {
-                for (int i = 1; i <= resultMeta.getColumnCount(); i++)
-                    System.out.print("\t" + result.getObject(i).toString() + "\t |");
 
-                System.out.println("\n---------------------------------");
+                // récupérer le usertype
+
+                int idUser;
+                String login;
+                String password;
+                int usertype;
+
+                idUser = result.getInt(1);
+                login = result.getObject(2).toString();
+                password = result.getObject(3).toString();
+                usertype = result.getInt(4);
+
+                if (usertype == 1) {
+
+                    User u = new Customer(login, password, usertype);
+                    u.setIdUser(idUser);
+                    list.add(u);
+                }
+
+                else if (usertype == 2) {
+
+                    User u = new Customer(login, password, usertype);
+                    u.setIdUser(idUser);
+                    list.add(u);
+                }
+
+                else if (usertype == 3) {
+
+                    User u = new Customer(login, password, usertype);
+                    u.setIdUser(idUser);
+                    list.add(u);
+                }
+
+                else if (usertype == 4) {
+
+                    User u = new Customer(login, password, usertype);
+                    u.setIdUser(idUser);
+                    list.add(u);
+                } else {
+                    //
+                }
+
+//                for (int i = 1; i <= resultMeta.getColumnCount(); i++)
+//                    System.out.print("\t" + result.getObject(i).toString() + "\t |");
+//
+//                System.out.println("\n---------------------------------");
 
             }
 
@@ -93,10 +136,7 @@ public class UserDAO {
 
         return list;
 
-//    public User find() {
-//
-//    }
-
-
     }
+
+
 }

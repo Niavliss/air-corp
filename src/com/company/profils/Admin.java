@@ -196,6 +196,11 @@ public class Admin extends User {
         UserDAO userDao = new UserDAO(BddConnection.getInstance());
         List <User> list = userDao.findAll();
 
+        for (User u : list) {
+            System.out.println(u.toString());
+
+        }
+
 
     }
 
